@@ -19,6 +19,7 @@ if update.lower() in ["y", "yes", "ye"]:
     api_hash=api_hash)
 
 sessions = os.listdir("sessions")
+print("[*] total accounts ➜ %d" % len(sessions))
 
 while True:
     
