@@ -2,8 +2,9 @@ import os, asyncio, toml
 from functions import flood, join
 
 for filename in os.listdir("sessions"):
-    os.remove(os.path.join(
-    "sessions", filename))
+    if filename.endswith(".session-journal"):
+        os.remove(os.path.join(
+        "sessions", filename))
 
 with open("config.toml") as file:
     config = toml.load(file)
