@@ -13,7 +13,7 @@ with open("config.toml") as file:
 authorization = config["authorization"]
 api_id, api_hash = authorization["api_id"], authorization["api_hash"]
 
-update = input("[?] update sessions? ➜ ")
+update = input("[?] update sessions ➜ ")
 if update.lower() in ["y", "yes", "ye"]:
     register(api_id=api_id,
     api_hash=api_hash)
