@@ -2,14 +2,13 @@ from telethon.sync import TelegramClient
 import os, sys
 
 def main(api_id, api_hash):
-    phone = input("[?] phone number ➜ ")
-    session = phone.replace("+", "")
+    phone = input("phone number ➜ ")
+    session = str(len(os.listdir("sessions")))
     client = TelegramClient(session,
     api_id, api_hash)
-    print("[&] sending verify code")
+    print("Sending verify code...")
     client.sign_in(phone)
-    code = input("[?] verify code ➜ ")
+    code = input("verify code ➜ ")
     client.sign_in(phone, code)
-    os.execl(sys.executable,
+    return os.execl(sys.executable,
     sys.executable, *sys.argv) 
-    return
