@@ -32,7 +32,7 @@ while True:
         if action == 1:
             menu = \
             "1) raid with text\n"\
-            "2) raid with reply\n"\
+            "2) raid with file\n"\
             "3) raid with mention\n"
             while True:
                 try:
@@ -41,11 +41,16 @@ while True:
                     if action == 1:
                         print("Running accounts...")
                         for acc in sessions:
-                            flood.chat_text(name=acc, api_id=api_id,
+                            flood.ChatText(name=acc, api_id=api_id,
                             api_hash=api_hash, trigger=trigger).start()
                         print(f"Send «{trigger}» to chat!")
                     elif action == 2:
-                        pass
+                        file = input("file ➜ ")
+                        print("Running accounts...")
+                        for acc in sessions:
+                            flood.ChatFile(name=acc, api_id=api_id,
+                            api_hash=api_hash, trigger=trigger, file=file).start()
+                        print(f"Send «{trigger}» to chat!")
                     elif action == 3:
                         pass
                     elif True:
