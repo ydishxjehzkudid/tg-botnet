@@ -3,9 +3,9 @@ import os, sys, asyncio
 from telethon.sync import TelegramClient, events
 from telethon import functions
 
-class chat(Thread):
+class ChatText(Thread):
     def __init__(self, name, api_id, api_hash, trigger):
-        self.name = "sessions/" + name
+        self.name = "sessions/" + name.replace(".session", "")
         self.api_id = api_id
         self.api_hash = api_hash
         self.trigger = trigger
@@ -28,11 +28,11 @@ class chat(Thread):
                         msg = await client(functions.messages.SendMessageRequest(
                         peer=message.chat_id, message="test")
                         count += 1
-                        print(f"[{msg.sender_id}] sended [count: {count}]")
+                        print(f"Sended {msg.sender_id} [count: {count}]")
                     except Exception as error:
                         try:
                             me = message.client.get_me()
-                            print(f"[{me.id}] not sended [error: {error}]")
+                            print(f"Not sended {me.id} [error: {error}]")
                         except Exception as err:
                             print(str(error) + str(err))
             client.start()
