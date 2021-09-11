@@ -3,7 +3,7 @@ import os, sys
 
 def main(api_id, api_hash):
     phone = input("phone number ➜ ")
-    session = str(len(os.listdir("sessions")))
+    session = str(len(os.listdir("sessions")) + 1)
     client = TelegramClient(session,
     api_id, api_hash)
     print("Sending verify code...")
