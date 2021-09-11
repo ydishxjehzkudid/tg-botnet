@@ -10,7 +10,7 @@ class ChatText(Thread):
         self.api_hash = api_hash
         self.trigger = trigger
         Thread.__init__(self)
-    def main(self):
+    def run(self):
         try:
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
