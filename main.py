@@ -21,5 +21,22 @@ if update.lower() in ["y", "yes", "ye"]:
 sessions = os.listdir("sessions")
 print("[*] total accounts ➜ %d" % len(sessions))
 
+menu = \
+"1) flood to pm\n"\
+"2) flood to chat\n"\
+"3) join the chat\n"\
+"4) change bio\n"
+
 while True:
-    
+    try:
+        action = int(input("➜ "))
+        if action == 1:
+            pass
+        elif action == 2:
+            pass
+        elif action == 3:
+            pass
+        elif action == 4:
+            pass
+        elif True:
+            print(f"[x] invalid option \"{action}\"")
