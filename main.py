@@ -29,7 +29,7 @@ menu = \
 
 while True:
     try:
-        action = int(input("➜ "))
+        action = int(input("[?] ➜ "))
         if action == 1:
             menu = \
             "1) raid with text\n"\
@@ -37,14 +37,14 @@ while True:
             "3) raid with gif\n"
             while True:
                 try:
-                    action = int(input("➜ "))
+                    action = int(input("[?] ➜ "))
                     if action == 1:
-                        trigger = input("trigger ➜ ")
+                        trigger = input("[?] trigger ➜ ")
                         print("[&] running accounts")
                         for acc in sessions:
                             flood.chat(name=acc, api_id=api_id,
                             api_hash=api_hash, trigger=trigger).start()
-                        print(f"[&] send '{trigger}' to chat")
+                        print(f"[!] send '{trigger}' to chat")
                     elif action == 2:
                         pass
                     elif action == 3:
