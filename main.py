@@ -8,18 +8,17 @@ for filename in os.listdir("sessions"):
         "sessions", filename))
 
 with open("config.toml") as file:
-    config = toml.load(file)
+    config = toml.load(file)["sessions"]
 
-authorization = config["authorization"]
-api_id, api_hash = authorization["api_id"], authorization["api_hash"]
+api_id, api_hash = config["api_id"], config["api_hash"]
 
-update = input("[?] update sessions ➜ ")
+update = input("update sessions ➜ ")
 if update.lower() in ["y", "yes", "ye"]:
     register(api_id=api_id,
     api_hash=api_hash)
 
 sessions = os.listdir("sessions")
-print("[*] total accounts ➜ %d" % len(sessions))
+print("total accounts ➜ %d" % len(sessions))
 
 menu = \
 "1) flood to pm\n"\
@@ -29,28 +28,28 @@ menu = \
 
 while True:
     try:
-        action = int(input("[?] ➜ "))
+        action = int(input("➜ "))
         if action == 1:
             menu = \
             "1) raid with text\n"\
             "2) raid with reply\n"\
-            "3) raid with gif\n"
+            "3) raid with mention\n"
             while True:
                 try:
-                    action = int(input("[?] ➜ "))
+                    action = int(input("➜ "))
+                    trigger = input("trigger ➜ ")
                     if action == 1:
-                        trigger = input("[?] trigger ➜ ")
-                        print("[&] running accounts")
+                        print("Running accounts...")
                         for acc in sessions:
-                            flood.chat(name=acc, api_id=api_id,
+                            flood.chat_text(name=acc, api_id=api_id,
                             api_hash=api_hash, trigger=trigger).start()
-                        print(f"[!] send '{trigger}' to chat")
+                        print(f"Send «{trigger}» to chat!")
                     elif action == 2:
                         pass
                     elif action == 3:
                         pass
                     elif True:
-                        print(f"[x] invalid option '{action}'")
+                        print(f"Invalid option «{action}»")
                 except:
                     pass
         elif action == 2:
@@ -60,4 +59,4 @@ while True:
         elif action == 4:
             pass
         elif True:
-            print(f"[x] invalid option '{action}'")
+            print(f"Invalid option «{action}»")
