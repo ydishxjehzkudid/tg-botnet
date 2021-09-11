@@ -29,9 +29,25 @@ menu = \
 
 while True:
     try:
-        action = int(input("➜ "))
+        action = int(input("➜ \n"))
         if action == 1:
-            pass
+            menu = \
+            "1) raid with text\n"\
+            "2) raid with reply\n"\
+            "3) raid with gif\n"
+            while True:
+                try:
+                    action = int(input("➜ \n"))
+                    if action == 1:
+                        pass
+                    elif action == 2:
+                        pass
+                    elif action == 3:
+                        pass
+                    elif True:
+                        print(f"[x] invalid option \"{action\"")
+                except:
+                    pass
         elif action == 2:
             pass
         elif action == 3:
