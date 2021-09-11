@@ -45,7 +45,7 @@ while True:
                     elif action == 3:
                         pass
                     elif True:
-                        print(f"[x] invalid option \"{action\"")
+                        print(f"[x] invalid option '{action}'")
                 except:
                     pass
         elif action == 2:
@@ -55,4 +55,4 @@ while True:
         elif action == 4:
             pass
         elif True:
-            print(f"[x] invalid option \"{action}\"")
+            print(f"[x] invalid option '{action}'")
