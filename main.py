@@ -29,7 +29,7 @@ menu = \
 
 while True:
     try:
-        action = int(input("➜ \n"))
+        action = int(input("➜ "))
         if action == 1:
             menu = \
             "1) raid with text\n"\
@@ -37,7 +37,7 @@ while True:
             "3) raid with gif\n"
             while True:
                 try:
-                    action = int(input("➜ \n"))
+                    action = int(input("➜ "))
                     if action == 1:
                         pass
                     elif action == 2:
